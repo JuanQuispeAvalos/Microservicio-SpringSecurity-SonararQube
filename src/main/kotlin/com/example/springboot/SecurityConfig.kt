@@ -5,6 +5,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.crypto.password.NoOpPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 
 @Configuration
@@ -22,9 +23,9 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
 
     override fun configure(auth: AuthenticationManagerBuilder?) {
         auth
-            ?.inMemoryAuthentication()
-            ?.withUser("user")?.password("{noop}user")?.roles("USER")
+            ?.inMemoryAuthentication()?.passwordEncoder(NoOpPasswordEncoder.getInstance())
+            ?.withUser("user")?.password("user")?.roles("USER")
             ?.and()
-            ?.withUser("admin")?.password("{noop}admin")?.roles("ADMIN")
+            ?.withUser("admin")?.password("admin")?.roles("ADMIN")
     }
 }
