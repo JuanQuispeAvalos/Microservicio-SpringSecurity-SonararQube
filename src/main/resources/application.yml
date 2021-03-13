@@ -1,1 +1,12 @@
-
+spring:
+  datasource:
+    url: "jdbc:oracle:thin:@connectiontest_high?TNS_ADMIN=<WALLET_DIRECTORY_PATH>"
+    username: "ADMIN"
+    password: "<password>"
+    driver-class-name: "oracle.jdbc.OracleDriver"
+  jpa:
+    hibernate:
+      ddl-auto: "create"
+server:
+  servlet:
+    context-path: "/api"

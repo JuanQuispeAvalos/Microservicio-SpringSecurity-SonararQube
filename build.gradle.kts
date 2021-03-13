@@ -20,6 +20,27 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+
+    // JDBC Connections
+
+    // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ucp
+    implementation("com.oracle.database.jdbc:ucp:19.10.0.0")
+    // https://mvnrepository.com/artifact/com.oracle.database.security/osdt_cert
+    implementation("com.oracle.database.security:osdt_cert:19.10.0.0")
+    // https://mvnrepository.com/artifact/com.oracle.database.security/osdt_core
+    implementation("com.oracle.database.security:osdt_core:19.10.0.0")
+    // https://mvnrepository.com/artifact/com.oracle.database.security/oraclepki
+    implementation("com.oracle.database.security:oraclepki:19.10.0.0")
+    // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10
+    runtimeOnly("com.oracle.database.jdbc", "ojdbc10", "19.10.0.0")
+
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 }
